@@ -30,6 +30,6 @@ void loop() {
   float input[1] = { myX };
   float myPredict = ml.predict(input); // make the sin prediction
 
-  Serial.println(String(myPredict) + "," + String(myY) );  // output for plotter minimal formating
-  delay(3);
+  Serial.println(String(myPredict) + ",0," + String(myY) );  // output for plotter minimal formating
+  delay(9);  // just to slow it a bit
 }

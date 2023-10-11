@@ -18,13 +18,18 @@ void setup() {
 }
 
 void loop() {
-    // pick up a random x and predict its sine
-    myCount += 1;
-    myX = sin(myCount*180/3.14);   
-    float input[1] = { myX };
-    float myY = ml.predict(input);
-   // Serial.print(x);
-   // Serial.print(",");
-    Serial.println(myY);
-    delay(33);
+
+  myCount +=1;
+  if (myCount >= 360){  // count all degrees of a circle
+      myCount = 0;
+  }
+
+  myX = myCount * 3.14/180;  // degrees to radians
+  myY = sin(myX);            // what the sin should be
+
+  float input[1] = { myX };
+  float myPredict = ml.predict(input); // make the sin prediction
+
+  Serial.println(String(myPredict) + "," + String(myY) );  // output for plotter minimal formating
+  delay(3);
 }

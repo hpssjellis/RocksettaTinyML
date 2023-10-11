@@ -1,4 +1,4 @@
-#include <EloquentTinyML.h>
+#include <RocksettaTinyML.h>
 // sine_model.h contains the array you exported from the previous step with xxd or tinymlgen
 #include "sine_model.h"
 
@@ -21,12 +21,8 @@ void loop() {
     float y = sin(x);
     float input[1] = { x };
     float predicted = ml.predict(input);
-
-    Serial.print("sin(");
     Serial.print(x);
-    Serial.print(") = ");
-    Serial.print(y);
-    Serial.print("\t predicted: ");
-    Serial.println(predicted);
-    delay(1000);
+    Serial.print(",");
+    Serial.println(y);
+    delay(100);
 }

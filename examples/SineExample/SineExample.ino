@@ -9,6 +9,8 @@
 
 Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, TENSOR_ARENA_SIZE> ml;
 
+float myCount, myX, myY = 0;
+
 
 void setup() {
     Serial.begin(115200);
@@ -17,12 +19,12 @@ void setup() {
 
 void loop() {
     // pick up a random x and predict its sine
-    float x = 3.14 * random(100) / 100;
-    float y = sin(x);
-    float input[1] = { x };
-    float predicted = ml.predict(input);
-    Serial.print(x);
-    Serial.print(",");
-    Serial.println(y);
-    delay(100);
+    myCount += 1;
+    myX = sin(myCount*180/3.14);   
+    float input[1] = { myX };
+    float myY = ml.predict(input);
+   // Serial.print(x);
+   // Serial.print(",");
+    Serial.println(myY);
+    delay(33);
 }

@@ -13,8 +13,10 @@ float myCount, myX, myY = 0;
 
 
 void setup() {
-    Serial.begin(115200);
-    ml.begin(sine_model);
+  Serial.begin(115200);
+  ml.begin(sine_model);
+  pinMode(LED_BUILTIN, OUTPUT);   // try on Portenta LEDB = blue, LEDG or LED_BUILTIN = green, LEDR = red 
+
 }
 
 void loop() {
@@ -31,5 +33,11 @@ void loop() {
   float myPredict = ml.predict(input); // make the sin prediction
 
   Serial.println(String(myPredict) + ",0," + String(myY) );  // output for plotter minimal formating
+  if (myPredict < 0.50) {  
+    digitalWrite(LED_BUILTIN, LOW); 
+  } else
+  {
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
   delay(9);  // just to slow it a bit
 }

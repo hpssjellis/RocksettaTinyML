@@ -140,14 +140,15 @@ if (myCurrentIndex % NUMBER_OF_INPUTS == 0) {   // slows down showing the result
   Serial.print("Predicted: "+String(myPredict)  );  // output with minimal formating
  // Serial.println(String(ml.output[0]) );  
  // Serial.println("--" );  
-  Serial.println("Label[0]:"+String(myOutput[0]) + ", label[1]" + String(myOutput[1]) + ", label[2]" + String(myOutput[2]) );  // output for plotter minimal formating
+  Serial.println(", same as Label[0]:"+String(myOutput[0]) + ", label[1]:" + String(myOutput[1]) + ", label[2]:" + String(myOutput[2]) );  // output for plotter minimal formating
   
-  if (myPredict < 0.50) {  
+  if (myPredict > 0.50) {  
     digitalWrite(LED_BUILTIN, LOW);    // on for portenta, off for Nano33BleSense
-  } else {
+}
+else {
     digitalWrite(LED_BUILTIN, HIGH);
   }
-  delay(10);  // just to slow it a bit
+  delay(40);  // just to slow it a bit
 }
 
 }

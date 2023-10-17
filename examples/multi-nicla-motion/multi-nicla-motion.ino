@@ -226,12 +226,14 @@ void loop() {
     if (readString == "start"){
       myPredictProximity = false;
       mySendProximity = false;
+      myPredictMotion = false;
       mySendData = true;
       myStart = millis();      //  reset the delay time
       myCount = 0;
     }
     if (readString == "stop"){
       myPredictProximity = false;
+      myPredictMotion = false;
       mySendData = false;
       Serial.println("Stopping at count: "+ String(myCount));  // CSV file heading titles
     }
@@ -246,6 +248,7 @@ void loop() {
 
     if (readString == "proximity"){
       myPredictProximity = false;
+      myPredictMotion = false;
       mySendProximity = true;
       mySendData = true;
       myStart = millis();      //  reset the delay time

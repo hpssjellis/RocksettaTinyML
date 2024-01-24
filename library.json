@@ -7,10 +7,19 @@
     "url": "https://github.com/hpssjellis/RocksettaTinyML"
   },
   "version": "0.1.3",
-  "authors": {
-    "name": "Simone Salerno",
-    "url": "https://github.com/eloquentarduino"
-  },
+  "authors": [
+    {
+      "name": "Simone Salerno",
+      "url": "https://github.com/eloquentarduino"
+    },
+    {
+      "name": "Jeremy Ellis",
+      "url": "https://github.com/hpssjellis" 
+    }
+  ],
+  "license": "MIT", // Replace with the appropriate license, if different
+  "examples": "examples/*", // Assuming your examples are stored in an 'examples' directory
   "frameworks": "arduino",
   "platforms": "*"
 }
+

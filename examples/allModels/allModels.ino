@@ -28,7 +28,7 @@
 #include <RocksettaTinyML.h>
 
 // sine_model.h contains the array you exported from the previous step with xxd or tinymlgen
-#include "xor_model.h"
+#include "xOr_model.h"
 
 #define NUMBER_OF_INPUTS 25
 #define NUMBER_OF_OUTPUTS 2

@@ -27,7 +27,8 @@
 //#include "Arduino_BMI270_BMM150.h" // REV 2
 
 /* For HTS221 Temperature and humidity sensor */
-#include <Arduino_HTS221.h>          // REV 1
+// not needed for this webSerial code
+//#include <Arduino_HTS221.h>          // REV 1
 //#include <Arduino_HS300x.h>        // REV 2
 //#define HTS HS300x                   // For REV 2 to work with old REV1 code
 

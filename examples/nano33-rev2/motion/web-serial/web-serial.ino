@@ -28,8 +28,8 @@
 
 /* For HTS221 Temperature and humidity sensor */
 //#include <Arduino_HTS221.h>          // REV 1
-#include <Arduino_HS300x.h>        // REV 2
-#define HTS HS300x                   // For REV 2 to work with old REV1 code
+//#include <Arduino_HS300x.h>        // REV 2
+//#define HTS HS300x                   // For REV 2 to work with old REV1 code
 
 
 // END REV 2 CHANGES  
